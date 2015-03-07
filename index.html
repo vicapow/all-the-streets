@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+body {
+  margin: 0;
+  background-color: #111;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="http://d3js.org/topojson.v1.js"></script>
+<script>
+
+
+var width = window.innerWidth
+var height = window.innerHeight
+var projection = d3.geo.albersUsa()
+  .translate([width / 2, height / 2])
+  .scale(1700)
+
+// var svg = d3.select('body').append('svg')
+//   .attr('width', width)
+//   .attr('height', height)
+
+var maxId = 80
+var id = maxId
+
+function next(id) {
+  d3.json('_build/states/' + id + '/data.topojson', function(err, shapefile) {
+    if (err) {
+      console.warn(err)
+      return done()
+    }
+    var canvas = d3.select('body').append('canvas')
+      .attr('width', width)
+      .attr('height', height)
+      .style({position: 'absolute', left: '0px', top: '0px'})
+    var context = canvas.node().getContext('2d')
+    var path = d3.geo.path().projection(projection)
+      .context(context)
+    // context.strokeStyle = 'rgba(0, 0, 0, 0.01)'
+    context.strokeStyle = 'rgba(255, 255, 255, 0.01)'
+    path(topojson.feature(shapefile, shapefile.objects.data))
+    context.stroke()
+
+    done()
+
+    function done() {
+      setTimeout(function() {
+        if (--id) next(id)
+      }, 500)
+    }
+
+    // svg.append('path')
+    //   .datum(topojson.feature(shapefile, shapefile.objects.data))
+    //   .attr('d', path)
+    //   .style('fill', 'none')
+    //   .style('stroke', 'rgba(0, 0, 0, 0.8)')
+    //   .style('stroke-width', 0.1)
+  })
+}
+
+next(id)
+
+</script>
