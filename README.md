@@ -2,7 +2,7 @@
 
 ![](example.png)
 
-Generate your own map of every street in America.
+Generate your own map of every street in America, inspired by Fathom's [All streets](http://3rdfloor.fathom.info/products/all-streets) poster.
 
 First run:
 
