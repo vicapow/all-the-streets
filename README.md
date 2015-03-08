@@ -1,5 +1,7 @@
 # All the streets of a America
 
+![](example.png)
+
 Generate your own map of every street in America.
 
 First run:
@@ -28,5 +30,3 @@ Now run you can
     node draw.js
 
 Which will generate the image to `out/out.png`. Feel free to modify the `draw.js` script to your liking.
-
-![](example.png)
