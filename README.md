@@ -22,11 +22,11 @@ Next, run
 
     node download.js
 
-This will download the data for the [US Census](http://www2.census.gov/geo/tiger/TIGER2014/ROADS/) website and run ogr2gr as well as convert the geojson files to topojson. Grab coffee. It's going to take a while (1-2 hours on my macbook air).
+To download the data for the [US Census](http://www2.census.gov/geo/tiger/TIGER2014/ROADS/) website and run ogr2gr as well as convert the geojson files to topojson. Grab coffee. It's going to take a while (1-2 hours on my macbook air).
 
 
-Now run you can
+Now you can run
 
     node draw.js
 
-Which will generate the image to `out/out.png`. Feel free to modify the `draw.js` script to your liking. This should take about 10-20 minutes at the default resolution.
+Which will generate the image and save it to `out/out.png`. Feel free to modify the `draw.js` script to your liking. This should take about 10-20 minutes at the default resolution.
