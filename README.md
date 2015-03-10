@@ -1,4 +1,4 @@
-# All the streets of a America
+# All the streets of America
 
 ![](example.png)
 
