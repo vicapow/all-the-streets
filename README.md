@@ -30,3 +30,5 @@ Now you can run
     node draw.js
 
 Which will generate the image and save it to `out/out.png`. Feel free to modify the `draw.js` script to your liking. This should take about 10-20 minutes at the default resolution.
+
+After creating this library, I came across Mike Bostock's [similar project](https://github.com/mbostock/us-rivers) to visualize all the rivers of the US as well as Casey Thomas's [project](https://github.com/caseypt/us-roads) to visualize all the US roads.
